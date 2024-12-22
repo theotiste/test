@@ -21,25 +21,25 @@ def Home():
 @app.route("/predict", methods=["POST"])
 def predict():
     if request.method == "POST":
-        Age = int(request.form["Age"])
-        RestingBP = int(request.form["RestingBP"])
-        Cholesterol = int(request.form["Cholesterol"])
-        Oldpeak = float(request.form["Oldpeak"])
-        FastingBS = int(request.form["FastingBS"])
-        MaxHR = int(request.form["MaxHR"])
+        Credit_line_outstanding = float(request.form["Credit_line_outstanding"])
+        Loan_amt_outstanding = float(request.form["Loan_amt_outstanding"])
+        Total_debt_outstanding = float(request.form["Total_debt_outstanding"])
+        Income = float(request.form["Income"])
+        Years_employed = int(request.form["Years_employed"])
+        Fico_score = int(request.form["Fico_score"])
         prediction = model.predict(
-            [[Age, RestingBP, Cholesterol, FastingBS, MaxHR, Oldpeak]]
+            [[Credit_line_outstanding, Loan_amt_outstanding, Total_debt_outstanding, Income, Years_employed, Fico_score ]]
         )
 
         if prediction[0] == 1:
             return render_template(
                 "index.html",
-                prediction_text="Kindly make an appointment with the doctor!",
+                prediction_text="Make an appointment with your banker",
             )
 
         else:
             return render_template(
-                "index.html", prediction_text="You are well. No worries :)"
+                "index.html", You're in default of payment :)"
             )
 
     else:
