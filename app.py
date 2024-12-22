@@ -21,7 +21,7 @@ def Home():
 @app.route("/predict", methods=["POST"])
 def predict():
     if request.method == "POST":
-        Credit_line_outstanding = float(request.form["Credit_line_outstanding"])
+        Credit_line_outstanding = int(request.form["Credit_line_outstanding"])
         Loan_amt_outstanding = float(request.form["Loan_amt_outstanding"])
         Total_debt_outstanding = float(request.form["Total_debt_outstanding"])
         Income = float(request.form["Income"])
