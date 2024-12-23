@@ -12,10 +12,10 @@
     <div style="color:blue">
         <form action="{{ url_for('predict')}}" method="post">
             <h2>Predictive Analysis</h2>
-            <h3>Credit_line_outstanding (0-5000000)</h3><input id="first" name="Credit_line_outstanding" required="required">
+            <h3>Credit_line_outstanding (0-5)</h3><input id="first" name="Credit_line_outstanding" required="required">
             <h3>Loan_amt_outstanding (46.78-10750.68)</h3><input id="second" name="Loan_amt_outstanding" required="required">
             <h3>Total_debt_outstanding (31.65-43688.78)</h3><input id="third" name="Total_debt_outstanding" required="required">
-            <h3>Income (1000-148412)</h3><input id="fourth" name="Income" required="required">
+            <h3>Income (1000-148412.20)</h3><input id="fourth" name="Income" required="required">
             <h3>Years_employed (0-10)</h3><input id="fifth" name="Years_employed" required="required">
             <h3>Fico_score (408-850)</h3><input id="sixth" name="Fico_score" required="required">
             <br><br><button id="sub" type="submit ">Result</button>
